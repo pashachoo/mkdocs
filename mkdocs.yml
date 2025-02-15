@@ -1,8 +1,8 @@
-site_name: TeamDominant Wiki
+site_name: QAJ WIKI
 site_description: Wiki and answers for most questions
-site_url: https://wiki.amdcloud.kz
+site_url: ""
 edit_uri: ""
-repo_url: https://github.com/TeamDominant/Wiki
+repo_url: https://github.com/pashachoo/mkdocs
 
 theme:
   palette:
@@ -69,10 +69,6 @@ markdown_extensions:
 
 plugins:
   - search
-  - social:
-      cards_layout_options:
-          background_color: "#1E2129"
-          background_image: layouts/amdcloud.png
   - git-revision-date-localized:
       type: timeago
       fallback_to_build_date: true
@@ -80,7 +76,7 @@ plugins:
       enabled: true
   - rss
   - git-committers:
-      repository: teamdominant/wiki
+      repository: pashachoo/mkdocs
       branch: main
       docs_path: docs/
       cache_dir:
@@ -93,7 +89,6 @@ extra:
   social:
     - icon: fontawesome/solid/rss 
       link: /feed_rss_created.xml
-  homepage: https://wiki.amdcloud.kz
 
 nav:
   - Home: 
