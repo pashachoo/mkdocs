@@ -1,0 +1,121 @@
+site_name: TeamDominant Wiki
+site_description: Wiki and answers for most questions
+site_url: https://wiki.amdcloud.kz
+edit_uri: ""
+repo_url: https://github.com/TeamDominant/Wiki
+
+theme:
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night 
+        name: Switch to system preference
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  name: material
+  custom_dir: overrides
+  favicon: images/favicon.png
+  logo: images/logo.png
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.blocks.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - pymdownx.tasklist
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - attr_list
+  - mdx_truly_sane_lists
+  - toc:
+      permalink: "#"
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+plugins:
+  - search
+  - social:
+      cards_layout_options:
+          background_color: "#1E2129"
+          background_image: layouts/amdcloud.png
+  - git-revision-date-localized:
+      type: timeago
+      fallback_to_build_date: true
+      enable_creation_date: true
+      enabled: true
+  - rss
+  - git-committers:
+      repository: teamdominant/wiki
+      branch: main
+      docs_path: docs/
+      cache_dir:
+        !ENV [
+          MKDOCS_PLUGIN_GIT_COMMITTERS_CACHE_DIR,
+          .cache/plugins/git-committers/,
+        ]
+
+extra:
+  social:
+    - icon: fontawesome/solid/rss 
+      link: /feed_rss_created.xml
+  homepage: https://wiki.amdcloud.kz
+
+nav:
+  - Home: 
+    - Start Page: index.md
+    - Getting Started: gettingstarted.md
+  - Software:
+    - Apps: apps.md
+    - Discord: discord.md
+    - Firefox: firefox.md
+    - Telegram: telegram.md
+  - Network:
+    - 3x-ui: 3x-ui.md
+    - Nekoray: nekoray.md
+    - Streisand: streisand.md
+  - Server:
+    - Askubuntu: askubuntu.md
+    - Nextcloud: nextcloud.md
+    - SWAG: secure.md
+    - Geoblock: geoblock.md
+    - Jfscan: jfscan.md
+  - Other:
+    - ArchLinux: arch.md
+    - iPhone: iphone.md
+    - Nothing Phone: nothing.md
+    - Wush: wush.md
